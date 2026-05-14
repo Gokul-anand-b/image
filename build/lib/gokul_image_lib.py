@@ -275,25 +275,10 @@ def stereo_depth(left_image, right_image):
 
     disparity = stereo.compute(left, right)
 
-    plt.figure(figsize=(12, 4))
+    cv2.imshow("Depth Map", disparity)
 
-    plt.subplot(1, 3, 1)
-    plt.imshow(left, cmap='gray')
-    plt.title("Left Image")
-    plt.axis('off')
-
-    plt.subplot(1, 3, 2)
-    plt.imshow(right, cmap='gray')
-    plt.title("Right Image")
-    plt.axis('off')
-
-    plt.subplot(1, 3, 3)
-    plt.imshow(disparity, cmap='gray')
-    plt.title("Depth Map")
-    plt.axis('off')
-
-    plt.tight_layout()
-    plt.show()
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
 # EXP 10 - Augmented Reality using Feature Matching
